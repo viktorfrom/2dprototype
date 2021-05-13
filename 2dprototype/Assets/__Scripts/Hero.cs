@@ -25,7 +25,7 @@ public class Hero : MonoBehaviour
         else 
         {
             Debug.Log("LogError seems to prevent the program from ever starting");
-            // Debug.LogError("Hero.Awake() - Attempted to assign second Hero.S!")
+            // Debug.LogError("Hero.Awake() - Attempted to assign second Hero.S!");
         }
     }
 
