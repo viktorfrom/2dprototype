@@ -386,6 +386,10 @@ MonoBehaviour:
   isOnScreen: 1
   camWidth: 0
   camHeight: 0
+  offRight: 0
+  offLeft: 0
+  offUp: 0
+  offDown: 0
 --- !u!1 &1025988769
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,10 +726,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 470343750, guid: 427a528e61b39bf4b9b1cafdf08a3710, type: 3}
-      propertyPath: radius
-      value: -2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8406056760737989086, guid: 427a528e61b39bf4b9b1cafdf08a3710, type: 3}
       propertyPath: m_RootOrder
       value: 3
