@@ -37,4 +37,9 @@ public class Shield : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rZ);
         
     }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        print("Triggered: " + other.gameObject.name);
+    }
 }

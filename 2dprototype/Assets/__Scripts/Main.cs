@@ -43,9 +43,20 @@ public class Main : MonoBehaviour
        pos.x = Random.Range(xMin, yMin);
        pos.y = bndCheck.camHeight + enemyPadding;
        go.transform.position = pos;
-       Debug.Log(pos);
 
        // Invoke SpawnEnemy() again
        Invoke("SpawnEnemy", 1f / enemySpawnPerSecond);
+    }
+
+    public void DelayedRestart(float delay)
+    {
+        // Invoke Restart() method in delay seconds
+        Invoke("Restart", delay);
+
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("_Scene_0");
     }
 }

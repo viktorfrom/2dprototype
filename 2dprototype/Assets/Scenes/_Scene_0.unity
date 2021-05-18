@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 262757194}
   - component: {fileID: 262757193}
   - component: {fileID: 262757192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,6 +338,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabEnemies:
   - {fileID: 8406056760737989087, guid: 427a528e61b39bf4b9b1cafdf08a3710, type: 3}
+  - {fileID: 935318047596544902, guid: 85e8ec62def19544c8c6986fb80b209c, type: 3}
+  - {fileID: 4623694118527478189, guid: bb2466415886387478fe71b5f063a487, type: 3}
+  - {fileID: 6445819768150931666, guid: 1dc0af3c82b6e4c44bb19f95657f2b37, type: 3}
+  - {fileID: 7798588119118509324, guid: 61d4982b55474d24790a935ad1694c50, type: 3}
   enemySpawnPerSecond: 0.5
   enemyDefaultPadding: 1.5
 --- !u!1 &997631230
@@ -352,9 +356,9 @@ GameObject:
   - component: {fileID: 997631233}
   - component: {fileID: 997631232}
   - component: {fileID: 997631234}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Hero
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -438,7 +442,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1025988770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +477,7 @@ GameObject:
   - component: {fileID: 1299083105}
   - component: {fileID: 1299083104}
   - component: {fileID: 1299083107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -502,7 +506,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299083102}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -582,7 +586,7 @@ GameObject:
   - component: {fileID: 1503641431}
   - component: {fileID: 1503641430}
   - component: {fileID: 1503641429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
