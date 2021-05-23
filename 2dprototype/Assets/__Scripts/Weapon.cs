@@ -29,7 +29,7 @@ public class WeaponDefinition
 }
 
 
-public class Wweapon : MonoBehaviour
+public class Weapon : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
