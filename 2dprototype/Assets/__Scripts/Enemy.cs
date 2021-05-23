@@ -9,12 +9,27 @@ public class Enemy : MonoBehaviour
     public float fireRate = 0.3f;
     public float health = 10;
     public int score = 100;
+    public float showDamageDuration = 0.1f;
+
+    [Header("Set Dynamically: Enemy")]
+    public Color[] originalColors;
+    public Material[] materials;
+    public bool showingDamage = false;
+    public float damageDoneTime;
+    public bool notifiedOfDestruction = false;
 
     protected BoundsCheck bndCheck;
 
     void Awake() 
     {
         bndCheck = GetComponent<BoundsCheck>();
+        // Get materials and colors for this GameObject and it's children
+        materials = Utils.GetAllMaterials(gameObject);
+        originalColors = new Color[materials.Length];
+        for (int i = 0; i < materials.Length; i++)
+        {
+            originalColors[i] = materials[i].color;
+        }
     }
 
     // This is a proptery: A method that acts like a field 
@@ -34,6 +49,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Move();
+
+        if (showingDamage && Time.time > damageDoneTime)
+        {
+            UnShowDamage();
+        }
 
         if (bndCheck != null && bndCheck.offDown) {
 
@@ -68,6 +88,8 @@ public class Enemy : MonoBehaviour
                     break;
                 }
 
+                ShowDamage();
+
                 health -= Main.GetWeaponDefinition(p.type).damageOnHit;
                 if (health <= 0)
                 {
@@ -80,5 +102,24 @@ public class Enemy : MonoBehaviour
                 print("Enemy hit by non-ProjectileHero: " + otherGO.name);
                 break;
         }
+    }
+
+    void ShowDamage()
+    {
+        foreach (Material m in materials)
+        {
+            m.color = Color.red;
+        }
+        showingDamage = true;
+        damageDoneTime = Time.time + showDamageDuration;
+    }
+
+    void UnShowDamage()
+    {
+        for (int i = 0; i < materials.Length; i++)
+        {
+            materials[i].color = originalColors[i];
+        }
+        showingDamage = false;
     }
 }

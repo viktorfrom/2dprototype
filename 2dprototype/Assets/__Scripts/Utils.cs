@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Utils : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static public Material[] GetAllMaterials(GameObject go)
     {
-        
-    }
+        Renderer[] rends = go.GetComponentsInChildren<Renderer>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        List<Material> mats = new List<Material>();
+        foreach (Renderer rend in rends)
+        {
+            mats.Add(rend.material);
+        }
+
+        return(mats.ToArray());
     }
 }
