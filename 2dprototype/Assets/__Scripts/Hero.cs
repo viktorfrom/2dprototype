@@ -27,12 +27,14 @@ public class Hero : MonoBehaviour
     // Create a WeaponFireDelegate field named fireDelegate
     public WeaponFireDelegate fireDelegate;
 
-    void Awake()
+    void Start()
     {
         if (S == null) 
         {
             S = this; // Set the Singleton
 
+            ClearWeapons();
+            weapons[0].SetType(WeaponType.blaster);
         }
         else 
         {
