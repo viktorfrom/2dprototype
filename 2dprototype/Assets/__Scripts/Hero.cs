@@ -121,18 +121,24 @@ public class Hero : MonoBehaviour
                 break;
             
             default: 
-                if (pu.type == weapons[0].type)
+                if (GetEmptyWeaponSlot() == null && pu.type != WeaponType.blaster)
+                {
+                    foreach (Weapon w in weapons)
+                    {
+                        if (w.type == WeaponType.blaster)
+                        {
+                            w.SetType(pu.type);
+                            break;
+                        }
+                    }
+                }
+                else
                 {
                     Weapon w = GetEmptyWeaponSlot();
                     if (w != null)
                     {
                         w.SetType(pu.type);
                     }
-                }
-                else
-                {
-                    ClearWeapons();
-                    weapons[0].SetType(pu.type);
                 }
                 break;
         }
