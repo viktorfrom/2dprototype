@@ -128,11 +128,11 @@ public class Hero : MonoBehaviour
                     {
                         w.SetType(pu.type);
                     }
-                    else
-                    {
-                        ClearWeapons();
-                        weapons[0].SetType(pu.type);
-                    }
+                }
+                else
+                {
+                    ClearWeapons();
+                    weapons[0].SetType(pu.type);
                 }
                 break;
         }
