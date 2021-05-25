@@ -120,8 +120,8 @@ public class Hero : MonoBehaviour
                 shieldLevel ++;
                 break;
             
-            default: 
-                if (GetEmptyWeaponSlot() == null && pu.type != WeaponType.blaster)
+            case WeaponType.spread:
+                if (GetEmptyWeaponSlot() == null)
                 {
                     foreach (Weapon w in weapons)
                     {
@@ -133,6 +133,39 @@ public class Hero : MonoBehaviour
                     }
                 }
                 else
+                {
+                    Weapon w = GetEmptyWeaponSlot();
+                    if (w != null)
+                    {
+                        w.SetType(pu.type);
+                    }
+                }
+                break;
+
+            case WeaponType.phaser:
+                if (GetEmptyWeaponSlot() == null)
+                {
+                    foreach (Weapon w in weapons)
+                    {
+                        if (w.type == WeaponType.blaster || w.type == WeaponType.spread)
+                        {
+                            w.SetType(pu.type);
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    Weapon w = GetEmptyWeaponSlot();
+                    if (w != null)
+                    {
+                        w.SetType(pu.type);
+                    }
+                }
+                break;
+
+            default: 
+                if (GetEmptyWeaponSlot() != null) 
                 {
                     Weapon w = GetEmptyWeaponSlot();
                     if (w != null)

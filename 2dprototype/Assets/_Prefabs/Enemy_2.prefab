@@ -185,7 +185,7 @@ MonoBehaviour:
   health: 8
   score: 100
   showDamageDuration: 0.1
-  powerUpDropChance: 0.5
+  powerUpDropChance: 0.75
   originalColors: []
   materials: []
   showingDamage: 0

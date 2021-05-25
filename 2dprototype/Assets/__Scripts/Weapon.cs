@@ -41,6 +41,13 @@ public class Weapon : MonoBehaviour
     public float lastShotTime;
     private Renderer collarRend;
 
+
+    [Header("Set in Inspector")]
+    public float lifeTime = 5;
+
+    [Header("Set Dynamically")]
+    public float birthTime;
+
     void Start()
     {
         collar = transform.Find("Collar").gameObject;
@@ -59,6 +66,8 @@ public class Weapon : MonoBehaviour
         {
             rootGO.GetComponent<Hero>().fireDelegate += Fire;
         }
+
+        birthTime = Time.time;
     }
 
     public WeaponType type
@@ -119,6 +128,15 @@ public class Weapon : MonoBehaviour
                 p.rigid.velocity = p.transform.rotation * vel;
                 p = MakeProjectile();
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
+                p.rigid.velocity = p.transform.rotation * vel;
+                break;
+
+            case WeaponType.phaser:
+                p = MakeProjectile();
+                p.rigid.velocity = vel;
+                float u = (Time.time - birthTime) / lifeTime;
+                u = u - 10f * Mathf.Sin(u * Mathf.PI * 4);
+                p.transform.rotation = Quaternion.AngleAxis(u, Vector3.back);
                 p.rigid.velocity = p.transform.rotation * vel;
                 break;
         }

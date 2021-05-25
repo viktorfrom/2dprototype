@@ -357,7 +357,7 @@ MonoBehaviour:
     projectileColor: {r: 1, g: 1, b: 1, a: 1}
     damageOnHit: 1
     continousDamage: 0
-    delayBetweenShots: 0.2
+    delayBetweenShots: 0.4
     velocity: 50
   - type: 2
     letter: S
@@ -366,7 +366,7 @@ MonoBehaviour:
     projectileColor: {r: 0, g: 0.54901963, b: 1, a: 1}
     damageOnHit: 1
     continousDamage: 0
-    delayBetweenShots: 0.4
+    delayBetweenShots: 0.6
     velocity: 50
   - type: 6
     letter: O
@@ -377,8 +377,17 @@ MonoBehaviour:
     continousDamage: 0
     delayBetweenShots: 0
     velocity: 0
+  - type: 3
+    letter: P
+    color: {r: 0.5019608, g: 0, b: 0.5019608, a: 1}
+    projectilePrefab: {fileID: 2577978088348407693, guid: 03ffcb82d854a9844b8c7619e7701fed, type: 3}
+    projectileColor: {r: 0.5019608, g: 0, b: 0.5019608, a: 1}
+    damageOnHit: 1
+    continousDamage: 0
+    delayBetweenShots: 0.2
+    velocity: 50
   prefabPowerUp: {fileID: 3555446269934392240, guid: 48525f40170a343428601c4b82ea6f1a, type: 3}
-  powerUpFrequency: 01000000010000000200000006000000
+  powerUpFrequency: 0100000001000000020000000300000006000000
 --- !u!1001 &641857973
 PrefabInstance:
   m_ObjectHideFlags: 0
