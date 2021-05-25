@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   fireRate: 0.3
-  health: 20
+  health: 10
   score: 100
   showDamageDuration: 0.1
   powerUpDropChance: 0.75
@@ -381,6 +381,9 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  projectilePrefab: {fileID: 285250708678202563, guid: 4f6e1e0fb32ae594a85d14195989ae92, type: 3}
+  projectileSpeed: 40
+  count: 0
   lifeTime: 5
   points: []
   birthTime: 0

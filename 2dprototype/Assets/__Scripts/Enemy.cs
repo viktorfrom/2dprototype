@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Set in Inspector: Enemy")]
     public float speed = 10f;
-    public float fireRate = 0.3f;
+    public float fireRate = 0.4f;
     public float health = 10;
     public int score = 100;
     public float showDamageDuration = 0.1f;
@@ -21,6 +21,12 @@ public class Enemy : MonoBehaviour
 
     protected BoundsCheck bndCheck;
 
+    public GameObject projectilePrefab;
+    public float projectileSpeed = 40;
+    public delegate void WeaponFireDelegate();
+    public WeaponFireDelegate fireDelegate;
+    public int count = 0;
+
     void Awake() 
     {
         bndCheck = GetComponent<BoundsCheck>();
@@ -31,6 +37,8 @@ public class Enemy : MonoBehaviour
         {
             originalColors[i] = materials[i].color;
         }
+
+        fireDelegate += TempFire;
     }
 
     // This is a proptery: A method that acts like a field 
@@ -65,6 +73,35 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        EnemyFire();
+    }
+
+    void EnemyFire() 
+    {
+        if (fireDelegate != null)
+        {
+            count += 1;
+        }
+
+        if (count >=  Random.Range(1000, 10_000))
+        {
+            fireDelegate();
+            count = 0;
+        }
+    }
+
+    void TempFire() 
+    {
+        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        projGO.transform.position = transform.position;
+        Rigidbody rigidB = projGO.GetComponent<Rigidbody>();
+        // rigidB.velocity = Vector3.up * projectileSpeed;
+
+        Projectile proj = projGO.GetComponent<Projectile>();
+        proj.type = WeaponType.blaster;
+        float tSpeed = Main.GetWeaponDefinition(proj.type).velocity;
+        rigidB.velocity = Vector3.down * tSpeed;
     }
 
     public virtual void Move() 

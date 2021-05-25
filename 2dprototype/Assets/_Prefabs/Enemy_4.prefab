@@ -384,6 +384,10 @@ MonoBehaviour:
   showingDamage: 0
   damageDoneTime: 0
   notifiedOfDestruction: 0
+  projectilePrefab: {fileID: 285250708678202563, guid: 4f6e1e0fb32ae594a85d14195989ae92, type: 3}
+  projectileSpeed: 40
+  count: 0
+  weapons: []
   parts:
   - name: Cockpit
     health: 10
