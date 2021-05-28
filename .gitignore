@@ -1,17 +1,3 @@
-/2dprojectv2/Library/
-/2dprojectv2/Logs/
-/2dprojectv2/Packages/
-/2dprojectv2/ProjectSettings/
-/2dprojectv2/Temp/
-/2dprojectv2/UserSettings/
-
-/2dprototype/Library/
-/2dprototype/Logs/
-/2dprototype/Packages/
-/2dprototype/ProjectSettings/
-/2dprototype/Temp/
-/2dprototype/UserSettings/
-
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
